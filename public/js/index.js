@@ -1,109 +1,80 @@
-let cuzzo = document.querySelector("#cuzzo");
-let bod = document.querySelector(".Bod");
-let begin = document.querySelector(".begin");
-let button = document.querySelector(".btn");
-let ul = document.querySelector(".ulTop");
-let bar = document.querySelector(".fa-bars");
-let body = document.querySelector("body");
-let left = document.querySelector(".left");
-let right = document.querySelector(".right");
-let slide1 = document.querySelector(".slide1");
-let slide2 = document.querySelector(".slide2");
-let slide3 = document.querySelector(".slide3");
-let follow = document.querySelector(".follow");
-let board = document.querySelector(".followme");
-let ex = document.querySelector(".fa-times");
-let youtube = document.querySelector(".you");
-let face = document.querySelector(".fa-facebook");
-let twit = document.querySelector(".fa-twitter");
-let insta = document.querySelector(".fa-instagram");
-let dipshit = document.querySelector(".dippy");
-
-let currentslide = slide1;
-let takeaway = () => {
-  face.classList.remove("ico");
-  face.classList.add("feces");
-  twit.classList.remove("ico");
-  twit.classList.add("twit");
-  insta.classList.remove("ico");
-  insta.classList.add("insty");
-  youtube.classList.remove("ico");
-  dipshit.classList.add("dipshit");
-};
-let giveaway = () => {
-  face.classList.add("ico");
-  face.classList.remove("feces");
-  twit.classList.add("ico");
-  twit.classList.remove("twit");
-  insta.classList.add("ico");
-  insta.classList.remove("insty");
-  youtube.classList.add("ico");
-  dipshit.classList.remove("dipshit");
+// set up text to print, each item in array is new line
+var aText = new Array("do you want to be at peace?");
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 2; // start scrolling up at this many lines
+let destination1 = document.getElementById("typedtext");
+let byebye = () => {
+  destination1.classList.add("byebye");
 };
 
-ex.addEventListener("click", () => {
-  board.style.width = "0";
-  board.style.right = "1000%";
-  youtube.classList.toggle("youtuber");
-  giveaway();
-});
-follow.addEventListener("click", () => {
-  board.style.width = "100%";
-  board.style.right = "0";
-  takeaway();
+var iTextPos = 0; // initialise text position
+var sContents = ""; // initialise contents variable
+var iRow; // initialise current row
 
-  youtube.classList.toggle("youtuber");
-});
+function typewriter() {
+  sContents = " ";
+  iRow = Math.max(0, iIndex - iScrollAt);
 
-button.addEventListener("click", () => {
-  bod.style.display = "block";
-  begin.style.display = "none";
-  body.style.overflow = "visible";
-});
-let mobile = function () {
-  if (begin.style.display === "none") {
-    bod.style.display = "block";
+  while (iRow < iIndex) {
+    sContents += aText[iRow++];
+  }
+  destination1.innerHTML =
+    sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  if (iTextPos++ == iArrLength) {
+    iTextPos = 0;
+    iIndex++;
+    setTimeout(byebye, 4000);
+    if (iIndex != aText.length) {
+      iArrLength = aText[iIndex].length;
+      setTimeout("typewriter()", 500);
+    }
   } else {
-    cuzzo.addEventListener("animationend", () => {
-      bod.style.display = "block";
-      begin.style.display = "none";
-      body.style.overflow = "visible";
-    });
+    setTimeout("typewriter()", iSpeed);
   }
-};
-bar.addEventListener("click", () => {
-  ul.classList.toggle("tog");
-});
-mobile();
+}
+// set up text to print, each item in array is new line
+var aText2 = new Array("How ");
+var iSpeed2 = 100; // time delay of print out
+var iIndex2 = 0; // start printing array at this posision
+var iArrLength2 = aText2[0].length; // the length of the text array
+var iScrollAt2 = 20; // start scrolling up at this many lines
 
-left.addEventListener("click", function () {
-  if (currentslide === slide2) {
-    slide2.style.transform = "translate(300%)";
-    slide1.style.transform = "translate(0)";
-    left.style.opacity = "0";
-    right.style.opacity = "1";
-    currentslide = slide1;
-  } else if (currentslide === slide3) {
-    slide3.style.transform = "translate(300%)";
-    slide2.style.transform = "translate(0)";
-    right.style.opacity = "1";
-    currentslide = slide2;
-  } else if (currentslide === slide1) {
-    alert(
-      "CONGRATS! YOU FOUND MY BUG! Pain in the ass to add the extra code to make the buttons go from the first slide to the thrid slide and vica vera. Please message me directly telling me of the find."
-    );
+var iTextPos2 = 0; // initialise text position
+var sContents2 = ""; // initialise contents variable
+var iRow2; // initialise current row
+let destination = document.getElementById("typedtext2");
+
+function typewriter2() {
+  setTimeout(typewriter2, 5000);
+  sContents2 = " ";
+  iRow2 = Math.max(0, iIndex2 - iScrollAt2);
+
+  while (iRow2 < iIndex2) {
+    sContents2 += aText2[iRow2++] + "<br />";
   }
-});
-right.addEventListener("click", function () {
-  if (currentslide === slide1) {
-    left.style.opacity = "1";
-    slide1.style.transform = "translate(-300%)";
-    slide2.style.transform = "translate(0)";
-    currentslide = slide2;
-  } else if (currentslide === slide2) {
-    slide2.style.transform = "translate(-300%)";
-    slide3.style.transform = "translate(0)";
-    right.style.opacity = "0";
-    currentslide = slide3;
+  destination.innerHTML =
+    sContents2 + aText2[iIndex2].substring(0, iTextPos2) + "_";
+  if (iTextPos2++ == iArrLength2) {
+    iTextPos2 = 0;
+    iIndex2++;
+    if (iIndex2 != aText2.length) {
+      iArrLength2 = aText2[iIndex2].length;
+      setTimeout("typewriter2()", 100);
+    }
+  } else {
+    setTimeout("typewriter2()", 500);
   }
-});
+}
+
+typewriter();
+setTimeout(function () {
+  typewriter2();
+}, 4000);
+destination.addEventListener(
+  "animationend",
+  () => (target.style.opacity = "0")
+);
+// If you want to remove it from the page after the fadeout
+target.addEventListener("transitionend", () => target.remove());
