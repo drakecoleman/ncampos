@@ -11,10 +11,10 @@
   height: 100vh;
   z-index: -1;
 }
-/*=====================
+/* =====================
      Typing Animation
  =====================*/
-/* #typedtext {
+#typedtext {
   position: absolute;
   top: 40%;
   left: 25%;
@@ -53,7 +53,8 @@
 }
 .byebye {
   opacity: 0;
-} */
+}
+*/
 /*=====================
      Landing Glass
  =====================*/
