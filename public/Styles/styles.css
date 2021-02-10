@@ -1,92 +1,62 @@
-* {
-  margin: 0;
+html {
+  font-size: 2vw;
+}
+body {
   padding: 0;
+  margin: 0;
+  background-color: black;
   text-decoration: none;
-  overflow: hidden;
-}
-
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-}
-/* =====================
-     Typing Animation
- =====================*/
-#typedtext {
-  position: absolute;
-  top: 40%;
-  left: 25%;
+  list-style-type: none;
+  /* overflow: hidden; */
   color: white;
-  font-size: 4rem;
-  width: 50%;
-  text-decoration: none;
-
-  transition: opacity 3s;
+  text-align: right;
+  font-family: "Amatic SC", cursive;
 }
-#typedtext2 {
-  position: absolute;
-  top: 40%;
-  left: 15%;
-  color: white;
-  font-size: 4rem;
-  width: 50%;
-  animation: swingover 6s forwards;
-  animation-delay: 8s;
-}
-@keyframes swingover {
-  25% {
-    transform: translate(400px);
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(400px);
-  }
-}
-.byebye {
-  opacity: 0;
-}
-*/
-/*=====================
-     Landing Glass
- =====================*/
-
-.glass {
-  display: flex;
-  flex-direction: column;
-  border: solid rgba(136, 48, 0, 0.7);
+header {
   text-align: center;
+  margin-top: 2vw;
   align-items: center;
+  display: flex;
   justify-content: center;
-  width: 50%;
-  margin: 10% auto;
-  padding: 5% 10%;
-  backdrop-filter: blur(2px);
-  border-radius: 0.25rem;
 }
-.glass img {
-  object-fit: contain;
+.headerImgDiv {
   width: 20%;
-
-  border-radius: 10rem;
 }
-.glass p {
-  font-size: 1rem;
+.headerImgDiv img {
+  width: 100%;
+  border-radius: 50%;
+}
+h1 {
   color: white;
+  font-size: 4vw;
+  margin: 2vw;
 }
-.fas {
+.tophead {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 50%;
+}
+ul {
+  padding: 0;
+  margin: 8vw auto;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+li {
+  text-align: center;
+  width: 10%;
   cursor: pointer;
-  font-size: 3rem;
-  color: grey;
+  padding: 0.5vw;
+  transition: 0.8s;
 }
-#stop {
-  display: none;
+li:hover {
+  background-color: white;
+  color: black;
+}
+.normo {
+  width: 50%;
+  filter: brightness(40%);
 }
