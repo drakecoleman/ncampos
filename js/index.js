@@ -70,12 +70,12 @@ let test = () => {
         hover(liA);
         item.addEventListener("mouseleave", () => {
           liA.forEach((ite) => {
-            ite.style.transition = ".5s";
+            ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
-            // ite.style.opacity = "0";
+            ite.style.opacity = "0";
             setTimeout(() => {
               ite.style.display = "none";
-            }, 500);
+            }, 400);
             ite.setTime;
           });
         });
@@ -149,11 +149,12 @@ test();
 
 let hover = (e) => {
   e.forEach((item) => {
+    item.style.opacity = "1";
     item.style.display = "block";
     item.style.transition = ".5s";
     setTimeout(() => {
       item.style.transform = "translate(0)";
-    }, 500);
+    }, 50);
   });
 };
 // let over = (e) => {
