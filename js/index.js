@@ -12,67 +12,19 @@ let be = document.querySelector(".B");
 let ce = document.querySelector(".C");
 let de = document.querySelector(".D");
 let ee = document.querySelector(".E");
-// listName.forEach((item) => {
-//   item.addEventListener("mouseover", () => {
-//     if (item.innerText === "Mind") {
-//       ae.style.display = "flex";
-//       opac(liA);
-//     } else if (item.innerText === "Body") {
-//       be.style.display = "flex";
-//       opac(liB);
-//     } else if (item.innerText === "Art") {
-//       ce.style.display = "flex";
-//       opac(liC);
-//     } else if (item.innerText === "About Me") {
-//       de.style.display = "flex";
-//       opac(liD);
-//     } else if (item.innerText === "Head Shots") {
-//       ee.style.display = "flex";
-//       opac(liE);
-//     }
-//   });
-// });
-// listName.forEach((item) => {
-//   item.addEventListener("mouseleave", () => {
-//     if (item.innerText === "Mind") {
-//       opac2(liA);
-//     } else if (item.innerText === "Body") {
-//       opac2(liB);
-//     } else if (item.innerText === "Art") {
-//       opac2(liC);
-//     } else if (item.innerText === "About Me") {
-//       opac2(liD);
-//     } else if (item.innerText === "Head Shots") {
-//       opac2(liE);
-//     }
-//   });
-// });
-
-// let opac = function (e) {
-//   for (i = 0; i <= e.length; i++) {
-//     e[i].style.transform = "translate(0)";
-//     e[i].style.opacity = "1";
-//     e[i].style.display = "block";
-//   }
-// };
-
-// let opac2 = function (e) {
-//   for (i = 0; i <= e.length; i++) {
-//     e[i].style.transform = "translate(-100%)";
-//     e[i].style.opacity = "0";
-//   }
-// };
 
 let test = () => {
   hoverList.forEach((item) => {
     item.addEventListener("mouseover", () => {
       if (item.innerText === "Mind") {
         hover(liA);
+        trans(liA);
         item.addEventListener("mouseleave", () => {
           liA.forEach((ite) => {
             ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
             ite.style.opacity = "0";
+            trans(liA);
             setTimeout(() => {
               ite.style.display = "none";
             }, 400);
@@ -81,11 +33,13 @@ let test = () => {
         });
       } else if (item.innerText === "Body") {
         hover(liB);
+        trans(liB);
         item.addEventListener("mouseleave", () => {
           liB.forEach((ite) => {
             ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
             ite.style.opacity = "0";
+            trans(liB);
             setTimeout(() => {
               ite.style.display = "none";
             }, 400);
@@ -94,11 +48,13 @@ let test = () => {
         });
       } else if (item.innerText === "Art") {
         hover(liC);
+        trans(liC);
         item.addEventListener("mouseleave", () => {
           liC.forEach((ite) => {
             ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
             ite.style.opacity = "0";
+            trans(liC);
             setTimeout(() => {
               ite.style.display = "none";
             }, 400);
@@ -107,11 +63,13 @@ let test = () => {
         });
       } else if (item.innerText === "About Me") {
         hover(liD);
+        trans(liD);
         item.addEventListener("mouseleave", () => {
           liD.forEach((ite) => {
             ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
             ite.style.opacity = "0";
+            trans(liD);
             setTimeout(() => {
               ite.style.display = "none";
             }, 400);
@@ -120,11 +78,13 @@ let test = () => {
         });
       } else if (item.innerText === "Head Shots") {
         hover(liE);
+        trans(liE);
         item.addEventListener("mouseleave", () => {
           liE.forEach((ite) => {
             ite.style.transition = ".4s";
             ite.style.transform = "translate(-100%)";
             ite.style.opacity = "0";
+            trans(liE);
             setTimeout(() => {
               ite.style.display = "none";
             }, 400);
@@ -136,37 +96,6 @@ let test = () => {
   });
 };
 
-// let test2 = () => {
-//   hoverList.forEach((item) => {
-//     item.addEventListener("mouseleave", () => {
-//       if ((item.innerText.includes = "Mind")) {
-//         alert("check");
-//       } else if ((item.innerText.includes = "Body")) {
-//         alert("check check");
-//       } else if (item.innerText === "Art") {
-//         over(liC);
-//       } else if (item.innerText === "About Me") {
-//         over(liD);
-//       } else if (item.innerText === "Head Shots") {
-//         over(liE);
-//       }
-//     });
-//   });
-// };
-// let test2 = item.addEventListener("mouseleave", () => {
-//   if ((item.innerText.includes = "Mind")) {
-//     alert("check");
-//   } else if ((item.innerText.includes = "Body")) {
-//     alert("check check");
-//   } else if (item.innerText === "Art") {
-//     over(liC);
-//   } else if (item.innerText === "About Me") {
-//     over(liD);
-//   } else if (item.innerText === "Head Shots") {
-//     over(liE);
-//   }
-// });
-// test2();
 test();
 
 let hover = (e) => {
@@ -177,5 +106,27 @@ let hover = (e) => {
     setTimeout(() => {
       item.style.transform = "translate(0)";
     }, 50);
+  });
+};
+let trans = (e) => {
+  e.forEach((item) => {
+    for (i = 0; i <= e.length; i++) {
+      if (i === 0) {
+        // e[i].style.transitionDelay = ".1s";
+        // console.log(e[i].style.transitionDelay);
+      }
+      if (i === 1) {
+        e[i].style.transitionDelay = " .1s";
+      }
+      if (i === 2) {
+        e[i].style.transitionDelay = ".15s";
+      }
+      if (i === 3) {
+        e[i].style.transitionDelay = ".2s";
+      }
+      if (i === 4) {
+        e[i].style.transitionDelay = ".25s";
+      }
+    }
   });
 };
