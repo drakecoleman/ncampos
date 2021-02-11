@@ -79,22 +79,62 @@ let test = () => {
             ite.setTime;
           });
         });
+      } else if (item.innerText === "Body") {
+        hover(liB);
+        item.addEventListener("mouseleave", () => {
+          liB.forEach((ite) => {
+            ite.style.transition = ".4s";
+            ite.style.transform = "translate(-100%)";
+            ite.style.opacity = "0";
+            setTimeout(() => {
+              ite.style.display = "none";
+            }, 400);
+            ite.setTime;
+          });
+        });
+      } else if (item.innerText === "Art") {
+        hover(liC);
+        item.addEventListener("mouseleave", () => {
+          liC.forEach((ite) => {
+            ite.style.transition = ".4s";
+            ite.style.transform = "translate(-100%)";
+            ite.style.opacity = "0";
+            setTimeout(() => {
+              ite.style.display = "none";
+            }, 400);
+            ite.setTime;
+          });
+        });
+      } else if (item.innerText === "About Me") {
+        hover(liD);
+        item.addEventListener("mouseleave", () => {
+          liD.forEach((ite) => {
+            ite.style.transition = ".4s";
+            ite.style.transform = "translate(-100%)";
+            ite.style.opacity = "0";
+            setTimeout(() => {
+              ite.style.display = "none";
+            }, 400);
+            ite.setTime;
+          });
+        });
+      } else if (item.innerText === "Head Shots") {
+        hover(liE);
+        item.addEventListener("mouseleave", () => {
+          liE.forEach((ite) => {
+            ite.style.transition = ".4s";
+            ite.style.transform = "translate(-100%)";
+            ite.style.opacity = "0";
+            setTimeout(() => {
+              ite.style.display = "none";
+            }, 400);
+            ite.setTime;
+          });
+        });
       }
     });
   });
 };
-// } else if (item.innerText === "Body") {
-//   hover(liB);
-//   test2();
-// } else if (item.innerText === "Art") {
-//   hover(liC);
-//   test2();
-// } else if (item.innerText === "About Me") {
-//   hover(liD);
-//   test2();
-// } else if (item.innerText === "Head Shots") {
-//   hover(liE);
-//   test2();
 
 // let test2 = () => {
 //   hoverList.forEach((item) => {
@@ -129,24 +169,6 @@ let test = () => {
 // test2();
 test();
 
-// let hovertime = hoverListItems.forEach((item) => {
-//   item.addEventListener("animationend", () => {
-//     if ((item.classList.includes = "opa2")) {
-//       subtract;
-//     } else {
-//       add;
-//     }
-//   });
-// });
-// let add = hoverListItems.forEach((item) => {
-//   item.classList.add("opa");
-//   item.classList.remove("opa2");
-// });
-// let subtract = hoverListItems.forEach((item) => {
-//   item.classList.remove("opa");
-//   item.classList.add("opa2");
-// });
-
 let hover = (e) => {
   e.forEach((item) => {
     item.style.opacity = "1";
@@ -157,12 +179,3 @@ let hover = (e) => {
     }, 50);
   });
 };
-// let over = (e) => {
-//   e.forEach((item) => {
-//     item.classList.remove("opa");
-//     item.classList.add("opa2");
-//     item.addEventListener("animationend", () => {
-//       // item.style.display = "none";
-//     });
-//   });
-// };
