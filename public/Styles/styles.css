@@ -16,6 +16,56 @@ body {
   font-family: "Amatic SC", cursive;
 }
 /*===================================================  
+         HeadShot Slide
+===================================================== */
+.headShotDiv {
+  width: 99%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.imgDivSlide {
+  width: 60%;
+  overflow: hidden;
+  margin: auto;
+  padding: 3%;
+  position: relative;
+}
+.imgDivSlide img {
+  width: 50%;
+}
+
+.arrowDiv {
+  position: absolute;
+  top: 25vw;
+  width: 150%;
+  left: -15vw;
+
+  display: flex;
+  justify-content: space-around;
+}
+.arrowDiv i {
+  background-color: white;
+  font-size: 4vw;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.arrowDiv i:hover {
+  color: white;
+  background-color: black;
+}
+.yeet {
+  transform: translate(-100vw);
+}
+/*===================================================  
              Top/Header
 ===================================================== */
 header {
@@ -44,15 +94,17 @@ h1 {
   display: flex;
   width: 50%;
 }
+
 /*===================================================  
              Top Lists
 ===================================================== */
+
 .boss {
   padding: 0;
   margin: 8vw auto;
   display: flex;
   list-style-type: none;
-  justify-content: space-evenly;
+  justify-content: space-around;
   /* align-items: center;*/
   text-align: center;
   list-style-type: none;
@@ -82,13 +134,12 @@ ul ul {
   background-color: black;
   border-radius: 0.25vw;
   display: none;
-
+  font-size: 1.2vw;
   color: white;
   border: solid white;
   margin: 1vw auto;
 }
 .hoverlist li:hover {
-  transition: 0.5s;
   background-color: white;
   color: black;
 }

@@ -1,3 +1,6 @@
+/*===================================================  
+             Top Lists Animation
+===================================================== */
 let listName = document.querySelectorAll(".listname");
 let hoverList = document.querySelectorAll(".hoverlist");
 let hoverListItems = document.querySelectorAll(".listItem");
@@ -6,12 +9,6 @@ let liB = document.querySelectorAll(".liB");
 let liC = document.querySelectorAll(".liC");
 let liD = document.querySelectorAll(".liD");
 let liE = document.querySelectorAll(".liE");
-
-let ae = document.querySelector(".A");
-let be = document.querySelector(".B");
-let ce = document.querySelector(".C");
-let de = document.querySelector(".D");
-let ee = document.querySelector(".E");
 
 let test = () => {
   hoverList.forEach((item) => {
@@ -62,35 +59,6 @@ let test = () => {
           });
         });
       } else if (item.innerText === "About Me") {
-        hover(liD);
-        trans(liD);
-        item.addEventListener("mouseleave", () => {
-          liD.forEach((ite) => {
-            ite.style.transition = ".4s";
-            ite.style.transform = "translate(-100%)";
-            ite.style.opacity = "0";
-            trans(liD);
-            setTimeout(() => {
-              ite.style.display = "none";
-            }, 400);
-            ite.setTime;
-          });
-        });
-      } else if (item.innerText === "Head Shots") {
-        hover(liE);
-        trans(liE);
-        item.addEventListener("mouseleave", () => {
-          liE.forEach((ite) => {
-            ite.style.transition = ".4s";
-            ite.style.transform = "translate(-100%)";
-            ite.style.opacity = "0";
-            trans(liE);
-            setTimeout(() => {
-              ite.style.display = "none";
-            }, 400);
-            ite.setTime;
-          });
-        });
       }
     });
   });
@@ -112,8 +80,6 @@ let trans = (e) => {
   e.forEach((item) => {
     for (i = 0; i <= e.length; i++) {
       if (i === 0) {
-        // e[i].style.transitionDelay = ".1s";
-        // console.log(e[i].style.transitionDelay);
       }
       if (i === 1) {
         e[i].style.transitionDelay = " .1s";
@@ -130,3 +96,19 @@ let trans = (e) => {
     }
   });
 };
+/*===================================================  
+             HeadShot Carosel
+===================================================== */
+let arrow = document.querySelectorAll(".arrow");
+let yeet = document.querySelectorAll(".yeet");
+let allSlides = document.querySelectorAll(".slide");
+let currentSlide = allSlides[0];
+console.log(currentSlide);
+arrow.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (item.classList.contains("fa-arrow-circle-right")) {
+    } else {
+      alert("Def works");
+    }
+  });
+});
