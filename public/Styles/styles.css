@@ -14,6 +14,7 @@ body {
   color: white;
   text-align: right;
   font-family: "Amatic SC", cursive;
+  overflow: hidden;
 }
 /*===================================================  
          HeadShot Slide
@@ -29,16 +30,21 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  transform: translate(-100%);
+  transition: 0.7s;
 }
 .imgDivSlide {
   width: 60%;
-  overflow: hidden;
+
   margin: auto;
   padding: 3%;
   position: relative;
 }
 .imgDivSlide img {
   width: 50%;
+}
+.imgdiv {
+  overflow: hidden;
 }
 
 .arrowDiv {
@@ -54,16 +60,35 @@ body {
   background-color: white;
   font-size: 4vw;
   color: black;
+  border-width: 100px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.7s;
+  z-index: 1;
+  background-size: 10vw;
 }
-.arrowDiv i:hover {
+i:hover {
   color: white;
   background-color: black;
 }
 .yeet {
-  transform: translate(-100vw);
+  transform: translate(-200%);
+}
+.slide {
+  position: absolute;
+  transition: 1s;
+}
+.headshotX {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  font-size: 3vw;
+  color: silver;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.headshotX:hover {
+  transform: rotate(90deg);
 }
 /*===================================================  
              Top/Header

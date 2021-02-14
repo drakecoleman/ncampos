@@ -102,13 +102,46 @@ let trans = (e) => {
 let arrow = document.querySelectorAll(".arrow");
 let yeet = document.querySelectorAll(".yeet");
 let allSlides = document.querySelectorAll(".slide");
-let currentSlide = allSlides[0];
-console.log(currentSlide);
+let aye = 0;
+let currentSlide = allSlides[aye];
+let headX = document.querySelector(".headshotX");
+let headshotTab = document.querySelector(".headerHead");
+let headShots = document.querySelector(".headShotDiv");
+
+headshotTab.addEventListener("click", () => {
+  headShots.style.transform = "translate(0)";
+});
+
+headX.addEventListener("click", () => {
+  headShots.style.transform = "translate(-100%)";
+});
+
 arrow.forEach((item) => {
   item.addEventListener("click", () => {
     if (item.classList.contains("fa-arrow-circle-right")) {
-    } else {
-      alert("Def works");
+      right();
+    } else if (item.classList.contains("fa-arrow-circle-left")) {
+      left();
     }
   });
 });
+
+let right = () => {
+  if (aye < 4) {
+    allSlides[aye].style.transform = "translate(300%)";
+    aye++;
+    allSlides[aye].style.transform = "translate(0)";
+    return aye;
+  } else {
+    console.log("end of carosel");
+  }
+};
+let left = () => {
+  if (aye > 0) {
+    allSlides[aye].style.transform = "translate(-200%)";
+    aye--;
+    allSlides[aye].style.transform = "translate(0)";
+  } else {
+    console.log("end of carosel");
+  }
+};
